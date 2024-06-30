@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroRight = () => {
   return (
-    <div id='hero-rgt' className=" flex-1 h-full overflow-hidden bg-[#e8eddf]/[.8] rounded-lg p-6">
+    <div id='hero-rgt' className=" flex-1 h-full overflow-hidden bg-[#bdbfb2]/[.97] rounded-lg p-6">
     <div className="tags flex gap-4 ">
         <h1 className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-lime-800 hover:text-lime-50 transition-colors duration-300 cursor-pointer font-medium rounded-xl backdrop-blur-lg'> Trending </h1>
         <h1 className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-lime-800 hover:text-lime-50 transition-colors duration-300 cursor-pointer font-medium rounded-xl backdrop-blur-lg'> Nature </h1>

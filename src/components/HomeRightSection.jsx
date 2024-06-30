@@ -1,5 +1,5 @@
 import React from 'react'
-import HorizontalNav from './navComponents/HorizontalNav'
+import HorizontalNav from './partials/HorizontalNav'
 import HeroLayout from './heroComponents/HeroLayout'
 import GalleryContainer from './GalleryContainer'
 
