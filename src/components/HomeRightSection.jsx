@@ -1,6 +1,6 @@
 import React from 'react'
 import HorizontalNav from './navComponents/HorizontalNav'
-import HeroLayout from './HeroLayout'
+import HeroLayout from './heroComponents/HeroLayout'
 import GalleryContainer from './GalleryContainer'
 
 const HomeRightSection = () => {
