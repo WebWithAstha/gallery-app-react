@@ -4,7 +4,7 @@ import Home from '../components/Home';
 import About from '../components/About';
 import NotFound from '../components/NotFound';
 import Search from '../components/Search';
-// import GalleryContainer from '../components/GalleryContainer';
+// import GridBox from '../components/GridBox';
 
 
 const AppRoutes = () => {
