@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import SideNav from './partials/SideNav'
-import HorizontalNav from './partials/TopNav'
 import { useParams } from 'react-router-dom'
-import Axios from '../utils/Axios'
-import LoadingImg from './LoadingImg'
+import SideNav from '../partials/SideNav'
+import TopNav from '../partials/TopNav'
+import Axios from '../../utils/Axios'
+import LoadingImg from '../partials/LoadingImg'
 import Filter from './Filter'
-import GridBox from './GridBox'
+import GridBox from '../partials/GridBox'
 
 const Search = () => {
     const { query } = useParams()
@@ -38,14 +38,14 @@ const Search = () => {
             <img className='w-full h-full fixed top-0 left-0 object-cover brightness-75 contrast-125' src="https://plus.unsplash.com/premium_photo-1706430433638-b9f3183a496e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
             <div className="flex w-full h-full relative">
                 <SideNav />
-                <div className="right flex-1 pr-10">
-                    <HorizontalNav />
+                <div className="right flex-1 xl:pr-10">
+                    <TopNav />
 
                     {images?<>{images.length > 0 ?
                         <>
 
                         <Filter query={query} orientation={orientation} setorientation={setorientation} setsize={setsize} size={size} color={color} setcolor={setcolor}/>
-                        <GridBox images={images} page={page} unseenPages={unseenPages} setpage={setpage} />
+                        <GridBox images={images} page={page} unseenPages={unseenPages} setpage={setpage} orientation={orientation} />
                         </>
 
 

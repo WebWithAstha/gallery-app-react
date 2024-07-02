@@ -1,9 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from '../components/Home';
-import About from '../components/About';
-import NotFound from '../components/NotFound';
-import Search from '../components/Search';
+import Home from '../components/home/Home'
+import About from '../components/About'
+import Search from '../components/search/Search'
+import NotFound from '../components/NotFound'
+import SingleImg from '../components/SingleImg'
 // import GridBox from '../components/GridBox';
 
 
@@ -13,7 +14,8 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/search/:query" element={<Search />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/media/:id" element={<SingleImg />} />
+        <Route path="*" element={<NotFound/>} />
     </Routes>
   )
 }

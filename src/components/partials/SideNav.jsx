@@ -5,7 +5,7 @@ const SideNav = () => {
   return (
     <>
 
-<div className="left w-[10%] p-10 h-full sticky top-0">
+<div className="left hidden xl:block fixed xl:relative w-[10%] p-10 h-full z-[9] top-0">
 
    
     <div className=' w-full py-2 gap-20 rounded-xl flex flex-col items-center justify-center h-full'>
