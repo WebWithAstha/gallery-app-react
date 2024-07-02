@@ -12,9 +12,11 @@ const GridBox = ({images,page,setpage,unseenPages, orientation}) => {
     <div className=' bg-[#e8eddf]/[.5] w-full p-6 xl:p-10 gap-6 xl:rounded-xl grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  backdrop-blur-lg'>
       {images.map((img, index) => {
         return (
+          <Link key={index} to={`/media/${img.id}`}>
           <div key={index} className={`img h-fit shrink-0 ${orientation === 'landscape'? 'xl:h-56':'xl:h-96'} xl:h-96 rounded-xl bg-[#b5b6ac] overflow-hidden`}>
             <img style={{backgroundColor:img.avg_color}} className={`w-full xl:h-full object-contain xl:object-cover bg-[${img.avg_color}]`} src={img.src.large2x} alt="" />
           </div>
+          </Link>
         )
       })      
     }
