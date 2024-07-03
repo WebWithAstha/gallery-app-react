@@ -5,12 +5,9 @@ const Filter = ({ query,size,setsize,orientation,setorientation,color,setcolor }
     return (
         <div className='relative z-[99] bg-[#e8eddf]/[.5] xl:mb-10 w-full px-10 py-4 gap-6 xl:rounded-xl backdrop-blur-lg'>
             <div className="top flex justify-center xl:justify-between items-center">
-                <h1 className='font-bold text-4xl capitalize'>{query} Images</h1>
+                <h1 className='font-bold text-4xl'>"<span className=' capitalize'>{query}</span>" related images.</h1>
                 <div className=" mt-4">
-                    <div className="border-2 xl:block hidden border-[#333533] cursor-pointer rounded flex gap-2 px-4 py-2">
-                        <img className='w-6' src="https://cdn-icons-png.flaticon.com/128/9446/9446801.png" alt="" />
-                        <span className='font-medium'>Filters</span>
-                    </div>
+                    Filters
                 </div>
             </div>
             <div className="filters flex xl:flex-row flex-col w-full gap-3 xl:gap-8 my-4">
