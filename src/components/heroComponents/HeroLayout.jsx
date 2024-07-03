@@ -4,7 +4,7 @@ import HeroRight from './HeroRight'
 
 const HeroLayout = () => {
   return (
-    <div id='hero' className='relative xl:mb-10 w-full flex xl:flex-row flex-col-reverse xl:gap-8'>
+    <div id='hero' className='relative xl:mb-10 w-full xl:h-52 flex xl:flex-row flex-col-reverse xl:gap-8'>
          
          <HeroLeft/>
           <HeroRight/>

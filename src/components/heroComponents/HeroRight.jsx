@@ -1,23 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import SearchBox from '../partials/SearchBox'
 
 const HeroRight = () => {
+
+  const tags = ['hero','trending','hey','nature','wallpapers','planet','animals','love','food','species']
+
   return (
     <div id='hero-rgt' className=" flex-1 h-full overflow-hidden xl:bg-[#bdbfb2]/[.97] xl:rounded-lg p-6">
+              <h1 className='text-4xl mb-4 font-bold'>Quick Searches</h1>
+
     <div className="tags flex flex-wrap gap-4 ">
-        <h1 className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-lime-800 hover:text-lime-50 transition-colors duration-300 cursor-pointer font-medium rounded-xl backdrop-blur-lg'> Trending </h1>
-        <h1 className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-lime-800 hover:text-lime-50 transition-colors duration-300 cursor-pointer font-medium rounded-xl backdrop-blur-lg'> Nature </h1>
-        <h1 className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-lime-800 hover:text-lime-50 transition-colors duration-300 cursor-pointer font-medium rounded-xl backdrop-blur-lg'> Hey </h1>
-        <h1 className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-lime-800 hover:text-lime-50 transition-colors duration-300 cursor-pointer font-medium rounded-xl backdrop-blur-lg'> Happy</h1>
-        <h1 className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-lime-800 hover:text-lime-50 transition-colors duration-300 cursor-pointer font-medium rounded-xl backdrop-blur-lg'> Wallpapers </h1>
-    </div>
-    <div className="bg-[#e8eddf]/[.8] hidden xl:block p-6 xl:w-[50%] mt-6 h-56 rounded-lg">
-    <h1 className='text-2xl font-semibold '>Start easy find.</h1>
-    <div className="center w-full mt-4  flex shadow-inner bg-[#e8eddf] rounded-lg px-2 py-1">
-            <input placeholder='Search media' className="w-full placeholder:text-lime-960 placeholder:font-bold placeholder:opacity-55 bg-transparent outline-none  h-full p-2" />
-            <img className='w-8 object-contain opacity-45' src="https://cdn-icons-png.flaticon.com/128/15582/15582721.png" alt="" />
-          </div>
-          <p className='mt-4'>Lorem ipsum dolor sit, amet consec tetur adipis icing elit. Volup tatem, quaerat?</p>
-    </div>
+      {tags.map((tag, index) => (
+        <Link to={`/search/${tag}`}>
+        <h1 key={index} className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-[#333533] hover:text-[#e8eddf] duration-300 rounded-lg cursor-pointer font-medium backdrop-blur-lg'>{tag}</h1>
+        </Link>
+      ))}
+      </div>
       </div>
   )
 }
