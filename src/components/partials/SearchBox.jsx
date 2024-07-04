@@ -9,10 +9,11 @@ const SearchBox = () => {
 
   const NavigateToSearch = ()=>{
     if(query && query.length > 0){
+      localStorage.setItem('page',0)
       navigate(`/search/${query}`)
     }
   }
-
+ 
   return (
     <>
       <input onKeyDown={e => e.code === "Enter" ? NavigateToSearch() : ''} onChange={e => setquery(e.target.value)} value={query ? query : ''} placeholder='Search media' className="w-full px-2 placeholder:text-[#333533] placeholder:font-medium placeholder:opacity-90 bg-transparent outline-none  h-full p-2" />

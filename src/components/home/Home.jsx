@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeRightSection from './HomeRightSection'
 import SideNav from '../partials/SideNav'
+import { Outlet } from 'react-router-dom'
 
 const Home = () => {
 
@@ -12,12 +13,10 @@ const Home = () => {
         <SideNav />
         <HomeRightSection />
 
-
-
-
-
       </div>
 
+
+    <Outlet/>
 
     </div >
   )

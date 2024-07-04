@@ -1,20 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import SearchBox from '../partials/SearchBox'
+import { Link, useNavigate } from 'react-router-dom'
 
 const HeroRight = () => {
 
-  const tags = ['hero','trending','hey','nature','wallpapers','planet','animals','love','food','species']
+  const tags = ['species','nature','planet','animals','love','food','species','trending','hey','water']
+
+  const navigate = useNavigate()
+
+  const navigateToSearch = (tag) => {
+    localStorage.setItem('page',0)
+    navigate(`/search/${tag}`)
+  }
+
+
 
   return (
-    <div id='hero-rgt' className=" flex-1 h-full overflow-hidden xl:bg-[#bdbfb2]/[.97] xl:rounded-lg p-6">
-              <h1 className='text-4xl mb-4 font-bold'>Quick Searches</h1>
+    <div id='hero-rgt' className=" flex-1 h-full overflow-y-auto scrollbar-hid relative lg:bg-[#bdbfb2]/[.97] lg:rounded-lg py-6 lg:py-6  px-10 lg:p-6">
+      <div className="head sticky top-0 lg:bg-[#bdbfb2]/[.97] z-[9]">
+        
+              <h1 className='text-4xl text-[#bdbfb2] lg:text-[#333533] mb-4 gil-bold lg:block hidden'>Quick Searches</h1>
+              <h1 className='text-4xl text-[#bdbfb2] lg:text-[#333533] mb-4 font-bold lg:hidden text-shadow'>Quick Searches</h1>
+      </div>
 
-    <div className="tags flex flex-wrap gap-4 ">
+    <div className="tags flex flex-wrap gap-4 h-max">
       {tags.map((tag, index) => (
-        <Link to={`/search/${tag}`}>
-        <h1 key={index} className='bg-[#e8eddf]/[.8] p-2 px-6 hover:bg-[#333533] hover:text-[#e8eddf] duration-300 rounded-lg cursor-pointer font-medium backdrop-blur-lg'>{tag}</h1>
-        </Link>
+        <h1 key={index} onClick={(e)=>(navigateToSearch(tag))} className='bg-[#e8eddf]/[.8] h-max p-2 px-6 hover:bg-[#333533] hover:text-[#e8eddf] duration-300 rounded-lg cursor-pointer font-medium backdrop-blur-lg'>{tag}</h1>
       ))}
       </div>
       </div>
