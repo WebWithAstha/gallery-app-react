@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 import SideNav from '../partials/SideNav'
 import TopNav from '../partials/TopNav'
 import Axios from '../../utils/Axios'
@@ -11,12 +11,13 @@ const Search = () => {
     const { query } = useParams()
 
     const [images, setimages] = useState([])
-    const [page, setpage] = useState(1)
+    // const [page, setpage] = useState(1)
+    const [page, setpage] = useState(JSON.parse(localStorage.getItem('page'))||1)
     const [unseenPages, setunseenPages] = useState(null)
 
     const [orientation, setorientation] = useState(null)
     const [size, setsize] = useState(null)
-    const [color, setcolor] = useState(null)    
+    const [color, setcolor] = useState(null)   
 
 
     const getSearchedImages = async () => {
@@ -28,9 +29,12 @@ const Search = () => {
         }
         setunseenPages(Math.ceil(data.total_results / 20) - page)
     }
-
     useEffect(() => {
         getSearchedImages()
+        console.log(orientation)
+        
+    localStorage.setItem('page',JSON.stringify(page))
+    setpage(JSON.parse(localStorage.getItem('page')))
     }, [query, page, size, orientation,color])
 
     return (
@@ -38,7 +42,7 @@ const Search = () => {
             <img className='w-full h-full fixed top-0 left-0 object-cover brightness-[85%] contrast-125' src="https://plus.unsplash.com/premium_photo-1706430433638-b9f3183a496e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
             <div className="flex w-full h-full relative">
                 <SideNav />
-                <div className="right flex-1 xl:pr-10">
+                <div className="right flex-1 lg:pr-10">
                     <TopNav />
 
                     {images?<>{images.length > 0 ?
@@ -66,7 +70,7 @@ const Search = () => {
 
             </div>
 
-
+            <Outlet/>
         </div >
     )
 }

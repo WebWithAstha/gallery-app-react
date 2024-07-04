@@ -7,11 +7,14 @@ import Axios from '../../utils/Axios'
 
 const HomeRightSection = () => {
   const [images, setimages] = useState([])
-  const [page, setpage] = useState(1)
-
+  const [page, setpage] = useState(JSON.parse(localStorage.getItem('page'))||1)
   useEffect(() => {
     getImg()
+    localStorage.setItem('page',JSON.stringify(page))
+    setpage(JSON.parse(localStorage.getItem('page')))
   }, [page])
+  console.log("home page ",page) 
+
   
   const getImg = async () => {
     const { data } = await Axios.get(`/curated?page=${page}&per_page=20`)
