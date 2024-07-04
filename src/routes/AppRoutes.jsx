@@ -11,11 +11,14 @@ import SingleImg from '../components/SingleImg'
 const AppRoutes = () => {
   return (
     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/search/:query" element={<Search />} />
-        <Route path="/media/:id" element={<SingleImg />} />
-        <Route path="*" element={<NotFound/>} />
+      <Route path="/" element={<Home />}>
+        <Route path='media/:id'element={<SingleImg/>}/>
+      </Route>
+      <Route path="/about" element={<About />} />
+      <Route path="/search/:query" element={<Search />}>
+        <Route path='media/:id'element={<SingleImg/>}/>
+      </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

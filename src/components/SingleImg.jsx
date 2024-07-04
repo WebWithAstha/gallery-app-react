@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import Axios from '../utils/Axios'
 
 const SingleImg = () => {
     const { id } = useParams()
     const [img, setimg] = useState(null)
+    const {pathname} = useLocation()
 
     const getImg = async () => {
         const { data } = await Axios.get(`/photos/${id}`)
-        console.log(data)
         setimg(data)
     }
     useEffect(() => {
@@ -32,22 +32,21 @@ const SingleImg = () => {
     return (
         img ?
 
-            <div className='w-full h-screen relative bg-[#ecede0]/[.5] py-10'>
-                <img className='w-full h-full z-[-1] fixed top-0 left-0 object-cover brightness-50 contrast-125' src="https://plus.unsplash.com/premium_photo-1706430433638-b9f3183a496e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                <Link to="/">
-                <button className='w-12 h-12 absolute top-8 left-8 p-4 bg-zinc-200 rounded-full overflow-hidden'>
+            <div className='w-full h-screen fixed z-[99] top-0 left-0 bg-black/[.7] pt-16 scrollbar-hid overflow-y-auto xl:py-10'>
+                <Link to={pathname.split('/media')[0] || '/'}>
+                <button className='xl:w-12 w-8 xl:h-12 h-8 absolute top-2 xl:top-8 left-4 xl:left-8 p-2.5 xl:p-4 bg-zinc-200 rounded-full overflow-hidden'>
                     <img className='w-full h-full object-cover pointer-events-none' src="https://cdn-icons-png.flaticon.com/128/1828/1828747.png" alt="" />
                 </button>
                 </Link>
-                <div className="wrapper bg-[#ecede0] w-[60rem] mx-auto rounded-lg py-4">
+                <div className="wrapper bg-[#ecede0] xl:w-[60rem] mx-auto rounded-lg py-4">
                     <div className="top w-full flex justify-between px-4">
                         <div className="flex items-center gap-1">
-                            <div className="w-10 h-10 rounded-full bg-yellow-800"></div>
+                            <div className="xl:w-10 w-8 xl:h-10 h-8 rounded-full bg-yellow-800"></div>
                             <h1 className='p-2 font-bold'>{img.photographer}</h1>
                         </div>
-                        <button onClick={e=>downloadImage(img.src.large2x,`img${img.id}_from_astha_gallery_app`)} className='bg-emerald-500 text-white rounded-lg px-8 py-2'>Download</button>
+                        <button onClick={e=>downloadImage(img.src.large2x,`img${img.id}_from_astha_gallery_app`)} className='bg-emerald-500 h-max text-white rounded-lg px-8 py-2'>Download</button>
                     </div>
-                    <div className="img w-full h-fit mt-4 flex items-center justify-center">
+                    <div className="img w-full xl:mb-0 mb-10 h-fit mt-4 flex items-center justify-center">
                         <img className="h-full xl:h-[80vh] object-contain" src={img && img.src.large2x} alt="" />
                     </div>
                 </div>
