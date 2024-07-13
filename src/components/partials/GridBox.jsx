@@ -36,8 +36,8 @@ const GridBox = ({images,page,setpage,unseenPages, orientation}) => {
   
     </div>
     <div className="pages w-full px-8 xl:px-12 flex justify-between mt-4 sticky bottom-4">
-      <button onClick={e=>page >1 ?setpage(page-1) :''} className={`${page === 1?'hidden':''} bg-[#e8eddf] hover:bg-[#333533] hover:text-[#e8eddf] duration-300 px-6 py-1.5 rounded-lg uppercase font-bold`}>prev </button>
-      <button onClick={e=>page >0 ?setpage(page+1) :''} className={`${unseenPages === 0?'hidden':''} bg-[#e8eddf] hover:bg-[#333533] hover:text-[#e8eddf] duration-300 px-6 py-1.5 rounded-lg uppercase font-bold ml-auto`}>next </button>
+      <button onClick={e=>page >1 ?setpage(page-1) :''} className={`${page === 1?'hidden':''} bg-[#e8eddf] hover:bg-[#333533] hover:text-[#e8eddf] duration-300 px-6 py-1.5 rounded-lg uppercase font-bold font-sans`}>prev </button>
+      <button onClick={e=>page >0 ?setpage(page+1) :''} className={`${unseenPages === 0?'hidden':''} bg-[#e8eddf] hover:bg-[#333533] hover:text-[#e8eddf] duration-300 px-6 py-1.5 rounded-lg uppercase font-bold font-sans ml-auto`}>next </button>
     </div>
     </>
    : 

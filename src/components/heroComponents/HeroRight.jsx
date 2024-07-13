@@ -15,9 +15,8 @@ const HeroRight = () => {
 
 
   return (
-    <div id='hero-rgt' className=" flex-1 h-full overflow-y-auto scrollbar-hid relative lg:bg-[#bdbfb2]/[.97] lg:rounded-lg py-6 lg:py-6  px-10 lg:p-6">
-      <div className="head sticky top-0 lg:bg-[#bdbfb2]/[.97] z-[9]">
-        
+    <div id='hero-rgt' className=" flex-1 h-full overflow-y-auto scrollbar-hid relative lg:bg-[#bdbfb2]/[.97] pb-6 lg:pb-6 lg:rounded-lg px-6 lg:px-6">
+      <div className="head sticky top-0 lg:bg-[#bdbfb2]/[.97] z-[9] py-2 pt-6 lg:pt-6 ">
               <h1 className='text-4xl text-[#bdbfb2] lg:text-[#333533] mb-4 gil-bold lg:block hidden'>Quick Searches</h1>
               <h1 className='text-4xl text-[#bdbfb2] lg:text-[#333533] mb-4 font-bold lg:hidden text-shadow'>Quick Searches</h1>
       </div>

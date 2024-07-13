@@ -9,12 +9,9 @@ import GridBox from '../partials/GridBox'
 
 const Search = () => {
     const { query } = useParams()
-
     const [images, setimages] = useState([])
-    // const [page, setpage] = useState(1)
     const [page, setpage] = useState(JSON.parse(localStorage.getItem('page'))||1)
     const [unseenPages, setunseenPages] = useState(null)
-
     const [orientation, setorientation] = useState(null)
     const [size, setsize] = useState(null)
     const [color, setcolor] = useState(null)   
@@ -31,7 +28,6 @@ const Search = () => {
     }
     useEffect(() => {
         getSearchedImages()
-        console.log(orientation)
         
     localStorage.setItem('page',JSON.stringify(page))
     setpage(JSON.parse(localStorage.getItem('page')))

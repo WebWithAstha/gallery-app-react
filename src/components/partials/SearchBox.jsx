@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const SearchBox = () => {
 
   const navigate = useNavigate()
 
   const [query, setquery] = useState(null)
+  
 
   const NavigateToSearch = ()=>{
     if(query && query.length > 0){
@@ -13,7 +14,10 @@ const SearchBox = () => {
       navigate(`/search/${query}`)
     }
   }
- 
+  const {pathname}= useLocation()
+  useEffect(()=>{
+    setquery(pathname.split('/search/')[1])
+  },[query])
   return (
     <>
       <input onKeyDown={e => e.code === "Enter" ? NavigateToSearch() : ''} onChange={e => setquery(e.target.value)} value={query ? query : ''} placeholder='Search media' className="w-full px-2 placeholder:text-[#333533] placeholder:font-medium placeholder:opacity-90 bg-transparent outline-none  h-full p-2" />

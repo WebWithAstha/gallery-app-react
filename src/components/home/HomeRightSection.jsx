@@ -13,8 +13,6 @@ const HomeRightSection = () => {
     localStorage.setItem('page',JSON.stringify(page))
     setpage(JSON.parse(localStorage.getItem('page')))
   }, [page])
-  console.log("home page ",page) 
-
   
   const getImg = async () => {
     const { data } = await Axios.get(`/curated?page=${page}&per_page=20`)
