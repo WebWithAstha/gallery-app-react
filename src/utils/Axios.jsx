@@ -1,7 +1,4 @@
 import axios from 'axios'
-import { createClient } from 'pexels'
-import React from 'react'
-
 
 const Axios = axios.create({
     baseURL: 'https://api.pexels.com/v1',
