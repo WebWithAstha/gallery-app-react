@@ -6,6 +6,7 @@ import Search from '../components/search/Search'
 import NotFound from '../components/NotFound'
 import SingleImg from '../components/SingleImg'
 import Contact from '../components/Contact'
+import SingleVideo from '../components/SingleVideo'
 // import GridBox from '../components/GridBox';
 
 
@@ -14,6 +15,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />}>
         <Route path='media/:id'element={<SingleImg/>}/>
+        <Route path='video/video/:id'element={<SingleVideo/>}/>
       </Route>
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />

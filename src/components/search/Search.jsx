@@ -45,7 +45,7 @@ const Search = () => {
                         <>
 
                         <Filter query={query} orientation={orientation} setorientation={setorientation} setsize={setsize} size={size} color={color} setcolor={setcolor}/>
-                        <GridBox images={images} page={page} unseenPages={unseenPages} setpage={setpage} orientation={orientation} />
+                        <GridBox media={images} mediaType={"photos"} page={page} unseenPages={unseenPages} setpage={setpage} orientation={orientation} />
                         </>
 
 

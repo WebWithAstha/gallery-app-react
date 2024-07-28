@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const SideNav = () => {
+const SideNav = ({setmediaType}) => {
 
 
   const navigate = useNavigate()
@@ -24,10 +24,10 @@ const SideNav = () => {
 
     <div className="btm bg-[#e8eddf]/[.5] py-4 px-2 rounded-lg">
 
-      <div className='xl:w-16 w-12 xl:h-16 h-12 cursor-pointer p-3 mb-4 shadow-inner flex items-center justify-center rounded-xl bg-[#333533]'>
+      <div onClick={e=>setmediaType("photos")} className='xl:w-16 w-12 xl:h-16 h-12 cursor-pointer p-3 mb-4 shadow-inner flex items-center justify-center rounded-xl bg-[#333533]'>
       <img className='w-full object-contain invert' src="https://cdn-icons-png.flaticon.com/128/9261/9261193.png" alt="" />
       </div>
-      <div className='xl:w-16 w-12 xl:h-16 h-12 cursor-pointer p-3 shadow-inner flex items-center justify-center rounded-xl bg-[#333533]'>
+      <div  onClick={e=>setmediaType("videos")} className='xl:w-16 w-12 xl:h-16 h-12 cursor-pointer p-3 shadow-inner flex items-center justify-center rounded-xl bg-[#333533]'>
       <img className='w-full object-contain invert' src="https://cdn-icons-png.flaticon.com/128/5761/5761917.png" alt="" />
 
       </div>
