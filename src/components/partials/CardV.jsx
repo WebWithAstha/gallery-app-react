@@ -3,7 +3,7 @@ import LoadingImg from './LoadingImg'
 
 const CardV = ({ img }) => {
 
-console.log(img)
+// console.log(img)
 
   const downloadImage = (url, filename) => {
     fetch(url)

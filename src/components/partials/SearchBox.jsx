@@ -15,9 +15,9 @@ const SearchBox = () => {
     }
   }
   const {pathname}= useLocation()
-  useEffect(()=>{
-    setquery(pathname.split('/search/')[1])
-  },[query])
+  // useEffect(()=>{
+  //   setquery(pathname.split('/search/')[1])
+  // },[query])
   return (
     <>
       <input onKeyDown={e => e.code === "Enter" ? NavigateToSearch() : ''} onChange={e => setquery(e.target.value)} value={query ? query : ''} placeholder='Search media' className="w-full px-2 placeholder:text-[#333533] placeholder:font-medium placeholder:opacity-90 bg-transparent outline-none  h-full p-2" />

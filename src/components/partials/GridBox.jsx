@@ -7,7 +7,7 @@ import CardV from './CardV'
 
 const GridBox = ({ mediaType, media, page, setpage, unseenPages, orientation }) => {
 
-  console.log(mediaType, media)
+  // console.log(mediaType, media)
 
   const { pathname } = useLocation()
 
