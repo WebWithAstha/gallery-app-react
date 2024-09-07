@@ -57,7 +57,7 @@ const SingleVideo = () => {
                         </div>
                     </div>
                     <div className="img w-full xl:mb-0 mb-10 min-h-[50vh] bg-[#333533]/[.6] h-fit mt-4 flex items-center justify-center">
-                        <video className="h-full xl:h-[80vh] object-contain" src={img && img.video_files[0].link} alt="" />
+                        <video autoPlay loop muted className="h-full xl:h-[80vh] object-contain" src={img && img.video_files[0].link} alt="" />
                     </div>
                 </div>
             </div>
